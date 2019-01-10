@@ -62,3 +62,20 @@ page
 	static int offset = 20;//每页显示的POI数目，限制小于25
 ```
 在接口之中，可以通过city&citylimit参数指定希望搜索的城市或区县。而city参数能够接收citycode和adcode，citycode仅能精确到城市，而adcode却能够精确到区县。这里选择citycode，如果研究范围是一个市的话。
+
+### 返回属性
+包括经纬度、名称、类别代码、城市代码等
+```java
+public class Poi {
+	
+	public String id,name;
+	public String location; //经纬度坐标
+//	public String address; //地址 若是地铁站，则为地铁线路名称
+	public String citycode, cityname;
+	public String adcode, adname;
+	public String typecode, type;
+}
+```
+例如：
+> {"id":"B00156CXQZ","name":"沃尔玛免费班车(上客站)","location":"121.512053,31.302162","address":"国宾路与政通路交叉口东南50米","citycode":"021","cityname":"上海市","adcode":"310110","adname":"杨浦区","typecode":"150800","type":"交通设施服务;班车站;班车站"}
+
